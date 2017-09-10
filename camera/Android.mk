@@ -8,8 +8,11 @@ LOCAL_SRC_FILES := \
 LOCAL_C_INCLUDES := \
     system/media/camera/include
 
+LOCAL_STATIC_LIBRARIES := libbase libarect
+
 LOCAL_SHARED_LIBRARIES := \
-    libhardware liblog libcamera_client libutils libcutils liblog
+    libhardware liblog libcamera_client libutils libcutils liblog libdl \
+    android.hidl.token@1.0-utils \
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE := camera.msm8226
