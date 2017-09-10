@@ -29,18 +29,21 @@
 
 #include <stdlib.h>
 
+#include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 
+using android::base::GetProperty;
+
 void vendor_load_properties()
 {
-    std::string platform = property_get("ro.board.platform");
+    std::string platform = GetProperty("ro.board.platform","");
     if (platform != ANDROID_TARGET)
         return;
 
-    std::string modem = property_get("ro.boot.modem");
+    std::string modem = GetProperty("ro.boot.modem","");
 
     if (modem == "LTEW") {
         property_set("ro.product.model", "HM NOTE 1LTE");
