@@ -89,6 +89,7 @@ TARGET_USES_POST_PROCESSING := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 BOARD_USES_ADRENO := true
+SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
 # Shader cache config options
 # Maximum size of the GLES Shaders that can be cached for reuse.
@@ -99,6 +100,9 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 # binaries. Decrease the size if RAM or Flash Storage size is a limitation
 # of the device.
 MAX_EGL_CACHE_SIZE := 2048*1024
+
+# HAL manifest
+DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
 
 # MKHW
 BOARD_USES_CYANOGEN_HARDWARE := true
